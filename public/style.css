@@ -1,0 +1,314 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(./images/SVUCp);
+    width: 210mm;
+    height: 297mm;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .page-container {
+    display: flex;
+    justify-content: center;
+    width: 210mm;
+    height: 297mm;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pdf-page {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+  }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  
+  .navbar-left img {
+    max-width: 100%;
+    max-height: 100px;
+    position: relative;
+  }
+  
+  .navbar-middle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 65px;
+    align-items: center;
+  }
+  
+  .navbar-middle .span1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
+    color: #000000;
+  }
+
+  .navbar-middle .span11 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 5px;
+    padding-top: 0px;
+    text-align: center;
+    color: #170505;
+  }
+  
+  .svg1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 55px;
+    margin-top: 10px
+  }
+  
+  .svg1 svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .span2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(223, 28, 28);
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: -40px;
+    margin-left: 38px;
+    position: absolute;
+
+  }
+  
+  .navbar-right {
+    font-size: 70px;
+    padding-left: 100px;
+    position: absolute;
+    margin-left: 550px;
+  }
+  
+
+.ex-v {
+    font-size: 20px;
+    font-weight: 450;
+    padding-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.a41-text1 {
+        padding-left: 10px;
+        margin-top: 10px;
+        padding-top: 0px;
+        }  
+
+.a41-text {
+            font-size: 20px;
+        
+            padding: 0px;
+            font-weight: bold;
+            }
+
+.a41-text-1 {
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.a41-text-2 {
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.a41-text-3 {
+
+    font-weight: bold;
+    font-size: 20px;
+}
+.a41-text-4 {
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+.a41-text-5 {
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.a41-text-6 {
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+.a41-text-7 {
+   
+    font-weight: bold;
+    font-size: 20px;
+}
+.a41-text-8 {
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.a41-text-9 {
+   
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.a41-text-10 {
+   
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.section-3 {
+    margin-top: 10px;
+}
+
+
+
+.table {
+border-collapse: collapse;
+width: 525px;
+margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+padding: 8px;
+text-align: left;
+}
+
+th {
+background-color: #f2f2f2;
+}
+
+.section-3 {
+display: flex;
+margin-bottom: 30px;
+}
+
+.section-3 .section3-left {
+flex: 1;
+margin-right: 20px;
+}
+
+.section-3 .section3-right img {
+width: 100%;
+margin-top: 15px;
+}
+
+.section-4 table td:nth-child(2n+1) {
+width: 50%;
+}
+
+.section-5 th:first-child,
+.section-5 td:first-child {
+width: 5%;
+}
+
+.section-5 th:nth-child(2),
+.section-5 td:nth-child(2) {
+width: 15%;
+}
+
+.section-5 th:nth-child(3),
+.section-5 td:nth-child(3) {
+width: 35%;
+}
+
+.section-5 th:nth-child(4),
+.section-5 td:nth-child(4) {
+width: 20%;
+}
+
+.section-5 th:nth-child(5),
+.section-5 td:nth-child(5) {
+width: 25%;
+}
+
+.section-6 .sign-std {
+display: inline-block;
+margin-right: 20px;
+}
+
+.section-7 p:last-child {
+margin-top: 20px;
+}
+
+.sign-std {
+    padding-top: 5px;
+height: 70px; /* Set the desired height for the image containers */
+text-align: center; /* Center the image horizontally */
+}
+
+.sign-std img {
+max-height: 60px; /* Ensure the image fits within the container height */
+max-width: 100%; /* Ensure the image scales proportionally */
+
+}
+
+.col-md-6 {
+    position: absolute;
+    margin-left: 20px;
+
+}
+.col-md-6-1 {
+    margin-left: 600px;
+
+}
+.mt-3 {
+    margin-top: 2px;
+    padding-top: 0px;
+}
+.end-text {
+    position: absolute;
+    font-weight: 500;
+    font-style: inherit;
+    margin-left: 5px;
+}
+.end {
+    margin-left: 650px;
+    position: absolute;
+    margin-top: 80px;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+@media print {
+  body {
+    padding: -50px;
+    margin: -20px;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  /* Add any additional CSS styles for printing here */
+}
