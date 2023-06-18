@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './css/HallTicketForm.css';
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import axios from 'axios';
 
 const HallTicketForm = () => {
   const [name, setName] = useState('');
@@ -15,24 +21,59 @@ const HallTicketForm = () => {
   const [regulation, setregulation] = useState('');
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  async (e) => {
     e.preventDefault();
-    // Process the form submission here
-    // You can perform validation and API calls
+    axios.post('https://hallticket-bc129-default-rtdb.firebaseio.com/Applications.json',name,
+    rollNo,
+    branch,
+    semester,
+    ExamType,
+    paymentRefNo,
+    date,
+    subjectList,
+    Course,
+    regulation,)
 
-    // Reset form fields
-    setName('');
-    setRollNo('');
-    setBranch('');
-    setSemester('');
-    setExamType('');
-    setPaymentRefNo('');
-    setDate('');
-    setSubjectlist('');
-    setCourses('');
-    setFile(null);
-    setregulation('');
 
+    try {
+      // Get a Firestore instance
+      const db = getFirestore();
+
+      // Save form data to Firebase
+      const docRef = await addDoc(collection(db, 'hallticket-forms'), {
+        name,
+        rollNo,
+        branch,
+        semester,
+        ExamType,
+        paymentRefNo,
+        date,
+        subjectList,
+        Course,
+        regulation,
+      });
+
+      console.log('Form data submitted with document ID:', docRef.id);
+
+      // Reset form fields
+      setName('');
+      setRollNo('');
+      setBranch('');
+      setSemester('');
+      setExamType('');
+      setPaymentRefNo('');
+      setDate('');
+      setSubjectlist('');
+      setCourses('');
+      setFile(null);
+      setregulation('');
+
+      toast.success('Form submitted successfully!');
+  } catch (error) {
+    console.error('Error saving form data:', error);
+    toast.error('Error submitting form. Please try again.');
+  }
+  
   };
 
   const handleFileChange = (e) => {
@@ -41,7 +82,9 @@ const HallTicketForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="hall-ticket-form">
+    <div>
+    <form onSubmit={handleSubmit} autoComplete className="hall-ticket-form" method="POST" >
+      
       <label htmlFor="name">Name:</label>
       <input
         type="text"
@@ -95,7 +138,7 @@ const HallTicketForm = () => {
       <select
         id="regulation"
         value={regulation}
-        onChange={(e) => setBranch(e.target.value)}
+        onChange={(e) => setregulation(e.target.value)}
         required
       >
         <option value="">Select</option>
@@ -180,6 +223,8 @@ const HallTicketForm = () => {
 
       <button type="submit">Submit</button>
     </form>
+     <ToastContainer />
+     </div>
   );
 };
 

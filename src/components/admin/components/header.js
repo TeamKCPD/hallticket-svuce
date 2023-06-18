@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import '../css/dashboard.css';
-
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -16,10 +15,12 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h2>Sri Venkateswara University College of Engineering Examination Dashboard</h2>
+      <div className="logo">
+        <h1>Sri Venkateswara University College of Engineering Examination Dashboard</h1>
+      </div>
       <div className="profile-dropdown">
         <div className="profile" onClick={handleProfileClick}>
-          Profile
+          <FaUserCircle className="profile-icon" />
         </div>
         {isDropdownOpen && (
           <div className="dropdown-content">

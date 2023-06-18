@@ -1,0 +1,127 @@
+.app {
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    padding-left: 300px;
+  }
+  
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    font-size: 2rem;
+    margin-right: 50px;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #ac3333;
+    min-width: 120px;
+    padding: 10px;
+    border: 1px solid #050101;
+  }
+  
+  .dropdown-content p {
+    margin: 5px 0;
+    cursor: pointer;
+  }
+  
+  
+  .sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    padding-top: 20px;
+    transition: width 0.3s ease;
+    z-index: 99;
+  }
+  
+  .sidebar:hover {
+    width: 300px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  
+  .dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin-left: 300px;
+    margin-top: 100px;
+    position: fixed;
+  }
+  
+  .dashboard-box {
+    width: 200px;
+    height: 150px;
+    background-color: #e8ef1a;
+    color: #f9eaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .dashboard-box a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .dashboard-box a:hover {
+    text-decoration: underline;
+  }
+  
