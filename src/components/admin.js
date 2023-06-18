@@ -22,8 +22,7 @@ const AdminPage = () => {
             <Link to="/admin/admindisplay">Admin Display</Link>
           </li>
         </ul>
-        
-        <Outlet/>
+
       
       </div>
     );

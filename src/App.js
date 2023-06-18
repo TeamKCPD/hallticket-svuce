@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes, Link, Outlet } from 'react-router-dom';
 import FrontendPage from './components/frontend';
 import AdminPage from './components/admin';
 import HallTicketLogin from './components/frontend/login';
@@ -10,39 +10,37 @@ import Login from './components/admin/adminlogin';
 import Dashboard from './components/admin/dashboard';
 import AdminDisplay from './components/admin/admindisplay';
 
-
 function App() {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/frontend">Frontend</Link>
-          </li>
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-        </ul>
-      </nav>
- 
-      <Routes>
-        <Route path="/frontend" element={<FrontendPage />}>
-                <Route exact path="/frontend/login" component={HallTicketLogin} />
-                <Route exact path="/frontend/applicationform" component={HallTicketForm} />
-                <Route exact path="/frontend/hallticket" component={HallTicket} />
-        </Route>
-            
-        <Route path="/admin" element={<AdminPage />} >
-                <Route exact path="/adminlogin" component={Login} />
-                <Route exact path="/admin/dashboard" component={Dashboard} />
-                <Route exact path="/admin/admindisplay" component={AdminDisplay} />
-        </Route>
-      </Routes>
-    </Router>
+    // <Router>
+    //   <nav>
+    //     <ul>
+    //       <li>
+    //         <Link to="/frontend">Frontend</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/admin">Admin</Link>
+    //       </li>
+    //     </ul>
+    //   </nav>
+
+    //   <Routes>
+    //     <Route path="/frontend" element={<FrontendPage />}>
+    //       <Route path="login" element={<HallTicketLogin />} />
+    //       <Route path="applicationform" element={<HallTicketForm />} />
+    //       <Route path="hallticket" element={<HallTicket />} />
+    //     </Route>
+
+    //     <Route path="/admin" element={<AdminPage />}>
+    //       <Route path="login" element={<Login />} />
+    //       <Route path="dashboard" element={<Dashboard />} />
+    //       <Route path="admindisplay" element={<AdminDisplay />} />
+    //     </Route>
+    //   </Routes>
+    // </Router>
+    <login/>
   );
 }
 
-
-export default App;
-
-
+ReactDOM.render(<App />, document.getElementById('root'));
+export default App
