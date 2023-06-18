@@ -1,32 +1,33 @@
-import React, { useState } from 'react';
-import '../admin/css/admindisplay.css'; // Import the CSS file for styling
+import React, { useState, useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase';
+import '../admin/css/admindisplay.css';
 
 const AdminDisplay = () => {
+  const [formData, setFormData] = useState([]);
   const [semesterFilter, setSemesterFilter] = useState('');
   const [regulationFilter, setRegulationFilter] = useState('');
   const [branchFilter, setBranchFilter] = useState('');
 
-  // Assume you have an array of form submission data
-  const formData = [
-    // Sample data, replace with your actual data
-    {
-      name: 'John Doe',
-      rollNo: '12345',
-      branch: 'CSE',
-      semester: '3',
-      regulation: 'r20',
-    },
-    {
-      name: 'Jane Smith',
-      rollNo: '54321',
-      branch: 'ECE',
-      semester: '4',
-      regulation: 'r18',
-    },
-    // Add more data objects as needed
-  ];
+  useEffect(() => {
+    const fetchFormData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'studentData'));
+        const fetchedData = querySnapshot.docs.map((doc) => doc.data());
+        setFormData(fetchedData);
+      } catch (error) {
+        console.error('Error fetching documents: ', error);
+      }
+    };
 
-  // Filter the data based on selected filters
+    fetchFormData();
+  }, []);
+
+  const handleApprove = (index) => {
+    // Handle approval logic here for the specific form data
+    console.log('Form data at index', index, 'approved');
+  };
+
   const filteredData = formData.filter((data) => {
     if (semesterFilter && data.semester !== semesterFilter) return false;
     if (regulationFilter && data.regulation !== regulationFilter) return false;
@@ -82,7 +83,6 @@ const AdminDisplay = () => {
           <option value="Chem">Chem</option>
         </select>
       </div>
-
       <table>
         <thead>
           <tr>
@@ -115,7 +115,9 @@ const AdminDisplay = () => {
               <td>{data.file ? <a href={data.file}>Download</a> : '-'}</td>
               <td>{data.regulation}</td>
               <td>
-                <button className="approve-button">Approve</button>
+                <button className="approve-button" onClick={() => handleApprove(index)}>
+                  Approve
+                </button>
               </td>
             </tr>
           ))}
@@ -124,5 +126,6 @@ const AdminDisplay = () => {
     </div>
   );
 };
+
 
 export default AdminDisplay;

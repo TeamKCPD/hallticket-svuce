@@ -1,60 +1,54 @@
-import React, { useState } from 'react';
-import "./css/login.css";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const HallTicketLogin = () => {
-  const [rollNumber, setRollNumber] = useState('');
-  const [dob, setDob] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+function Home(props) {
+  const navigate = useNavigate();
 
-  const handleRollNumberChange = (event) => {
-    setRollNumber(event.target.value);
-  };
-
-  const handleDobChange = (event) => {
-    setDob(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Perform validation and login verification logic here
-    if (rollNumber === '123456' && dob === '01/01/2000') {
-      // Redirect to hall ticket download page or display hall ticket
-      console.log('Login successful');
-    } else {
-      setErrorMessage('Invalid roll number or date of birth');
-    }
+  // Function to handle navigation when the user is logged in
+  const handleLoggedInNavigation = () => {
+    navigate("/newpage"); // Replace "/dashboard" with the desired URL for the new page
   };
 
   return (
-    <div className="login-container">
-      <h2>Hall Ticket Download Login</h2>
-      <form onSubmit={handleSubmit} className="login-form">
-        <div className="form-group">
-          <label htmlFor="rollNumber">Roll Number:</label>
-          <input
-            type="text"
-            id="rollNumber"
-            value={rollNumber}
-            onChange={handleRollNumberChange}
-            className="input-field"
-          />
+    <div>
+      <div>
+        {props.name ? (
+          // If the user is logged in, display a greeting and the sign-out button
+          <div>
+            <h2>Welcome - {props.name}</h2>
+            
+          </div>
+        ) : (
+          // If the user is not logged in, display login and signup links
+          <div>
+            <h1>
+              <Link to="/login">Login</Link>
+            </h1>
+            <br />
+            <h1>
+              <Link to="/signup">Signup</Link>
+            </h1>
+          </div>
+        )}
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      {props.name ? (
+        // If the user is logged in, display a message and a button to navigate to a new page
+        <div>
+          <h2>You are already logged in!</h2>
+          <button onClick={handleLoggedInNavigation}>Go to Dashboard</button>
         </div>
-        <div className="form-group">
-          <label htmlFor="dob">Date of Birth (DOB):</label>
-          <input
-            type="text"
-            id="dob"
-            value={dob}
-            onChange={handleDobChange}
-            className="input-field"
-          />
-        </div>
-        <button type="submit" className="submit-button">Submit</button>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-      </form>
+      ) : (
+        // If the user is not logged in, display a message to prompt login
+        <h2>Login please</h2>
+      )}
     </div>
   );
-};
+}
 
-export default HallTicketLogin;
+export default Home;
+

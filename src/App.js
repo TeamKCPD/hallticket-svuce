@@ -12,33 +12,32 @@ import AdminDisplay from './components/admin/admindisplay';
 
 function App() {
   return (
-    // <Router>
-    //   <nav>
-    //     <ul>
-    //       <li>
-    //         <Link to="/frontend">Frontend</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/admin">Admin</Link>
-    //       </li>
-    //     </ul>
-    //   </nav>
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/frontend">Frontend</Link>
+          </li>
+          <li>
+            <Link to="/admin">Admin</Link>
+          </li>
+        </ul>
+      </nav>
 
-    //   <Routes>
-    //     <Route path="/frontend" element={<FrontendPage />}>
-    //       <Route path="login" element={<HallTicketLogin />} />
-    //       <Route path="applicationform" element={<HallTicketForm />} />
-    //       <Route path="hallticket" element={<HallTicket />} />
-    //     </Route>
+      <Routes>
+        <Route path="/frontend" element={<FrontendPage />}>
+          <Route path="login" element={<HallTicketLogin />} />
+          <Route path="applicationform" element={<HallTicketForm />} />
+          <Route path="hallticket" element={<HallTicket />} />
+        </Route>
 
-    //     <Route path="/admin" element={<AdminPage />}>
-    //       <Route path="login" element={<Login />} />
-    //       <Route path="dashboard" element={<Dashboard />} />
-    //       <Route path="admindisplay" element={<AdminDisplay />} />
-    //     </Route>
-    //   </Routes>
-    // </Router>
-    <login/>
+        <Route path="/admin" element={<AdminPage />}>
+          <Route path="login" element={<Login />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="admindisplay" element={<AdminDisplay />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
