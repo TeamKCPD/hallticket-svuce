@@ -9,6 +9,9 @@ import HallTicket from './components/frontend/hallticket';
 import Login from './components/admin/adminlogin';
 import Dashboard from './components/admin/dashboard';
 import AdminDisplay from './components/admin/admindisplay';
+import Marked from './components/admin/markdowninput';
+import Blogs from './components/frontend/blog';
+
 
 function App() {
   return (
@@ -29,12 +32,15 @@ function App() {
           <Route path="login" element={<HallTicketLogin />} />
           <Route path="applicationform" element={<HallTicketForm />} />
           <Route path="hallticket" element={<HallTicket />} />
+          <Route path="blog" element={<Blogs />} />
         </Route>
 
         <Route path="/admin" element={<AdminPage />}>
           <Route path="login" element={<Login />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="admindisplay" element={<AdminDisplay />} />
+          <Route path="markdowninput" element={<Marked />} />
+
         </Route>
       </Routes>
     </Router>

@@ -19,6 +19,9 @@ const FrontendPage = () => {
           <li>
             <Link to="/frontend/hallticket">HallTicket</Link>
           </li>
+          <li>
+            <Link to="/frontend/blog">Blog</Link>
+          </li>
         </ul>
 
         <Outlet/> 
