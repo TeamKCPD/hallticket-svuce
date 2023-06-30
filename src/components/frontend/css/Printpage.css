@@ -1,0 +1,23 @@
+.print-page {
+    width: 210mm; /* A4 width */
+    height: 297mm; /* A4 height */
+    background-color: lightblue;
+    padding: 20px;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  h1 {
+    color: white;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  p {
+    color: #555;
+  }
+  

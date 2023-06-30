@@ -1,0 +1,170 @@
+{
+      "r20": {
+          "ece": {
+            "semesters": [
+                {
+                  "semester": "1",
+                  "subjects": [
+                    { "code": "MA 101", "name": "Mathematics-I" },
+                    { "code": "PY 102", "name": "Modern Physics" },
+                    { "code": "CS 103", "name": "Programming for Problem Solving" },
+                    { "code": "EC 103", "name": "Electronic Devices" },
+                    { "code": "ME 105", "name": "Workshop/ Manufacturing Practices" },
+                    { "code": "CS 106", "name": "Programming for Problem Solving Lab" },
+                    { "code": "CE 107", "name": "Environmental Sciences" }
+
+                  ]
+                },
+                {
+                    "semester": "2",
+                    "subjects": [
+                      { "code": "MA 201", "name": "Mathematics-II" },
+                      { "code": "CY 202", "name": "Engineering Chemistry" },
+                      { "code": "EN 203", "name": "English" },
+                      { "code": "EE 205", "name": "Basic Electrical Engineering" },
+                      { "code": "ME 205", "name": "Engineering Graphics and Design" },
+                      { "code": "EN 206", "name": "English Communication Lab" }
+                    ]
+                  },
+                  {
+                    "semester": "3",
+                    "subjects": [
+                      { "code": "MA301B", "name": "Mathematics-III" },
+                      { "code": "EC302C", "name": "Network Theory" },
+                      { "code": "EC303C", "name": "Signals and Systems" },
+                      { "code": "EC304C", "name": "Electromagnetic Waves and Transmission Lines" },
+                      { "code": "EC305C", "name": "Digital Logic Design" },
+                      { "code": "EC306C", "name": "Analog Circuits" },
+                      { "code": "EC307L", "name": "Basic Electrical Engineering lab" },
+                      { "code": "EC308L", "name": "Electronic Devices lab" },
+                      { "code": "EC309S", "name": "Entrepreneurship and Design Thinking" },
+                      { "code": "MC310A", "name": "Constitution of India" },
+                      { "code": "EC311L", "name": "Simulation Lab" }
+                      
+                    ]
+                  },
+                  {
+                    "semester": "4",
+                    "subjects": [
+                      { "code": "EC401C", "name": "Linear Control Systems" },
+                      { "code": "EC402C", "name": "Probability theory and Stochastic Process" },
+                      { "code": "HS403C", "name": "Managerial Economics and Accountancy" },
+                      { "code": "EC404C", "name": "IC Applications" },
+                      { "code": "EC405C", "name": "Analog Communications" },
+                      { "code": "EC406L", "name": "Digital Logic Design lab" },
+                      { "code": "EC407L", "name": "Analog Circuits Lab" },
+                      { "code": "EC408L", "name": "IC Applications Lab" },
+                      { "code": "EC409S", "name": "Python Programming" }
+                    ]
+                  },
+                  {
+                    "semester": "5",
+                    "subjects": [
+                      { "code": "EC501C", "name": "Computer Organization & Architecture" },
+                      { "code": "EC502C", "name": "Microprocessors and Microcontrollers" },
+                      { "code": "EC503C", "name": "Digital Signal Processing" },
+                      { "code": "EC504C", "name": "Antennas and Wave Propagation" },
+                      { "code": "EC505C", "name": "Digital Communications" },
+                      { "code": "EC506L", "name": "Microprocessors and Microcontrollers Lab" },
+                      { "code": "EC507L", "name": "Digital Signal Processing Lab" },
+                      { "code": "EC508L", "name": "Analog and Digital Communications Lab" },
+                      { "code": "EC509S", "name": "Web Design and Development" },
+                      { "code": "EC510A", "name": "Universal Human Values" } 
+                    ]
+                  },
+                  {
+                    "semester": "6",
+                    "subjects": [
+                      { "code": "EC601C", "name": "Microwave Engineering" },
+                      { "code": "EC602C", "name": "Computer Networks" },
+                      { "code": "EC603C", "name": "Professional Elective-I" },
+                      { "code": "EC604C", "name": "Professional Elective-II" },
+                      { "code": "EC605C", "name": "Open Elective-1(Through MOOCS)" },
+                      { "code": "EC606C", "name": "Open Elective-2(Through MOOCS)" },
+                      { "code": "EC607L", "name": "Microwave Engineering Lab" },
+                      { "code": "EC608L", "name": "Computer Networks Lab" },
+                      { "code": "EC609S", "name": "Internet of Things and Applications" },
+                      { "code": "EC610MC", "name": "Professional Ethics in Engineering" }
+                    ]
+                  },
+                  {
+                    "semester": "7",
+                    "subjects": [
+                      { "code": "EC701C", "name": "Digital Image and Video Processing" },
+                      { "code": "EC702C", "name": "Professional Elective-III" },
+                      { "code": "EC703C", "name": "Professional Elective-IV" },
+                      { "code": "EC704C", "name": "Professional Elective-V" },
+                      { "code": "EC705C", "name": "Open Elective-III (Through MOOCS)" },
+                      { "code": "EC706C", "name": "Open Elective-IV (Through MOOCS)" },
+                      { "code": "EC707S", "name": "Machine Learning" },
+                      { "code": "EC708I", "name": "Summer Internship (4 to 6 Weeks) completed during VI Semester" }
+
+                    ]
+                  },
+                  {
+                    "semester": "8",
+                    "subjects": [
+                      { "code": "", "name": "" }
+                    ]
+                  }
+            ]
+          },
+          "cse": {
+            "semester": {
+              "1": ["Subject1", "Subject2", "Subject3"],
+              "2": ["Subject4", "Subject5", "Subject6"],
+              "3": ["Subject7", "Subject8", "Subject9"],
+              "4": ["Subject10", "Subject11", "Subject12"],
+              "5": ["Subject13", "Subject14", "Subject15"],
+              "6": ["Subject16", "Subject17", "Subject18"],
+              "7": ["Subject19", "Subject20", "Subject21"],
+              "8": ["Subject22", "Subject23", "Subject24"]
+            }
+          },
+          "eee": {
+            "semester": {
+              "1": ["Subject1", "Subject2", "Subject3"],
+              "2": ["Subject4", "Subject5", "Subject6"],
+              "3": ["Subject7", "Subject8", "Subject9"],
+              "4": ["Subject10", "Subject11", "Subject12"],
+              "5": ["Subject13", "Subject14", "Subject15"],
+              "6": ["Subject16", "Subject17", "Subject18"],
+              "7": ["Subject19", "Subject20", "Subject21"],
+              "8": ["Subject22", "Subject23", "Subject24"]
+            }
+          },
+          "civil": {
+            "semester": {
+              "1": ["Subject1", "Subject2", "Subject3"],
+              "2": ["Subject4", "Subject5", "Subject6"],
+              "3": ["Subject7", "Subject8", "Subject9"],
+              "4": ["Subject10", "Subject11", "Subject12"],
+              "5": ["Subject13", "Subject14", "Subject15"],
+              "6": ["Subject16", "Subject17", "Subject18"],
+              "7": ["Subject19", "Subject20", "Subject21"],
+              "8": ["Subject22", "Subject23", "Subject24"]
+            }
+          },
+          "chem": {
+            "semester": {
+              "1": ["Subject1", "Subject2", "Subject3"],
+              "2": ["Subject4", "Subject5", "Subject6"],
+              "3": ["Subject7", "Subject8", "Subject9"],
+              "4": ["Subject10", "Subject11", "Subject12"],
+              "5": ["Subject13", "Subject14", "Subject15"],
+              "6": ["Subject16", "Subject17", "Subject18"],
+              "7": ["Subject19", "Subject20", "Subject21"],
+              "8": ["Subject22", "Subject23", "Subject24"]
+            }
+          
+          },
+          "mech": {
+          }
+    },
+      "r18": {
+    },
+      "r16": {
+
+      }
+}
+  

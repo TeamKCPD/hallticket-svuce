@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs ,doc,setDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import '../admin/css/admindisplay.css';
+import { FirebaseApp } from 'firebase/app';
 
 const AdminDisplay = () => {
   const [formData, setFormData] = useState([]);
@@ -23,10 +24,18 @@ const AdminDisplay = () => {
     fetchFormData();
   }, []);
 
-  const handleApprove = (index) => {
-    // Handle approval logic here for the specific form data
-    console.log('Form data at index', index, 'approved');
+  const handleApprove = async (index) => {
+    try {
+      const formDataItem = formData[index];
+      const rollNo = formDataItem.rollNo;
+      const approvedDocRef = doc(db, 'approvedstudents', 'approved');
+      await setDoc(approvedDocRef, { [rollNo]: true }, { merge: true });
+      console.log('Form data at index', index, 'approved');
+    } catch (error) {
+      console.error('Error approving form data: ', error);
+    }
   };
+  
 
   const filteredData = formData.filter((data) => {
     if (semesterFilter && data.semester !== semesterFilter) return false;
@@ -44,15 +53,15 @@ const AdminDisplay = () => {
           value={semesterFilter}
           onChange={(e) => setSemesterFilter(e.target.value)}
         >
-          <option value="">All</option>
-          <option value="1">First</option>
-          <option value="2">Second</option>
-          <option value="3">Third</option>
-          <option value="4">Fourth</option>
-          <option value="5">Fifth</option>
-          <option value="6">Sixth</option>
-          <option value="7">Seventh</option>
-          <option value="8">Eighth</option>
+          <option value="">ALL</option>
+        <option value="sem1">I</option>
+        <option value="sem2">II</option>
+        <option value="sem3">III</option>
+        <option value="sem4">IV</option>
+        <option value="sem5">V</option>
+        <option value="sem6">VI</option>
+        <option value="sem7">VII</option>
+        <option value="sem8">VIII</option>
         </select>
 
         <label htmlFor="regulation-filter">Select Regulation:</label>

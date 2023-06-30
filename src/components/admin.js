@@ -24,6 +24,10 @@ const AdminPage = () => {
           <li>
             <Link to="/admin/markdowninput">Marked Preview</Link>
           </li>
+          <li>
+            <Link to="/admin/adminform">Admin form</Link>
+          </li>
+
         </ul>
         <Outlet/>
 

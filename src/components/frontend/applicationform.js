@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { collection, addDoc ,setDoc,doc} from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, } from "../../firebase";
 import "./css/HallTicketForm.css";
 
@@ -15,6 +15,7 @@ const NewPage = () => {
   const [Courses, setCourses] = useState("");
   const [paymentRefNo, setPaymentRefNo] = useState("");
   const [date, setDate] = useState("");
+  const [dob, setdob] = useState("");
 
 
   const handleSubmit = async (e) => {
@@ -41,6 +42,7 @@ const NewPage = () => {
       Courses,
       paymentRefNo,
       date,
+      dob
     };
 
     try {
@@ -48,11 +50,14 @@ const NewPage = () => {
       await uploadBytes(storageRef, fileInput.files[0]);
 
       // Get the download URL of the uploaded file
-      const downloadURL = await uploadBytes.ref.getDownloadURL();
+      const downloadURL = await getDownloadURL(storageRef);
+  
+      // Add the download URL to the form data
+      formData.paymentReceiptURL = downloadURL;
+  
+      const docRef = await setDoc(doc(collection(db, "studentData"), rollNo), formData);
 
-      const docRef = await addDoc(collection(db, "studentData"), formData);
-      console.log("Document written with ID: ", docRef.id);
-      // Clear the form after successful submission
+      console.log("Document written with ID: ", rollNo);
       setName("");
       setRollNo("");
       setBranch("");
@@ -63,6 +68,7 @@ const NewPage = () => {
       setCourses("");
       setPaymentRefNo("");
       setDate("");
+      setdob("");
     } catch (error) {
       console.error("Error adding document: ", error);
     }
@@ -78,6 +84,15 @@ const NewPage = () => {
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <label htmlFor="dob">Select Your DOB:</label>
+        <input
+          type="date"
+          id="dob"
+          value={dob}
+          onChange={(e) => setdob(e.target.value)}
           required
         />
 
@@ -140,14 +155,14 @@ const NewPage = () => {
           required
         >
           <option value="">Select Semester</option>
-          <option value="1">First</option>
-          <option value="2">Second</option>
-          <option value="3">Third</option>
-          <option value="4">Fourth</option>
-          <option value="5">Fifth</option>
-          <option value="6">Sixth</option>
-          <option value="7">Seventh</option>
-          <option value="8">Eighth</option>
+        <option value="sem1">I</option>
+        <option value="sem2">II</option>
+        <option value="sem3">III</option>
+        <option value="sem4">IV</option>
+        <option value="sem5">V</option>
+        <option value="sem6">VI</option>
+        <option value="sem7">VII</option>
+        <option value="sem8">VIII</option>
         </select>
 
         <label htmlFor="subjectList">Whether the Candidate appearing for Whole Examination or for select Courses:</label>
